@@ -1,2 +1,3 @@
-# Wordpress Bands Plugin
+# WordPress Bands Plugin
+
 Custom Post Type Plugin For You Favourite Bands
