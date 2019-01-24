@@ -23,11 +23,13 @@ include('includes/activate.php');
 include('includes/init.php');
 include('includes/admin/init.php');
 include('process/save_post.php');
+include('process/filter-content.php');
 
 //Hooks
 register_activation_hook( __FILE__, 'bands_activate_plugin' );
 add_action('init', 'bands_init');
 add_action('admin_init', 'bands_admin_init');
 add_action('save_post_bands', 'bands_save_admin', 10, 3);
+add_filter('the_content', 'bands_filter_content');
 
 //Shortcodes

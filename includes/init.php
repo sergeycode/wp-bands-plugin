@@ -20,7 +20,7 @@ function bands_init() {
   
     $args = array(
       'labels'             => $labels,
-                  'description'        => __( 'Custom Post Type for Bands', 'bands' ),
+      'description'        => __( 'Custom Post Type for Bands', 'bands' ),
       'public'             => true,
       'publicly_queryable' => true,
       'show_ui'            => true,
