@@ -10,6 +10,8 @@ Text Domain: bands
 */
 
 //Setup
+define('BANDS_PLUGIN_URL', __FILE__);
+
 // Make sure we don't expose any info if called directly
 if ( !function_exists( 'add_action' ) ) {
 	echo 'Hi there, hacker! Sorry, but direct access is not allowed.';
@@ -19,9 +21,13 @@ if ( !function_exists( 'add_action' ) ) {
 //Includes
 include('includes/activate.php');
 include('includes/init.php');
+include('includes/admin/init.php');
+include('process/save_post.php');
 
 //Hooks
 register_activation_hook( __FILE__, 'bands_activate_plugin' );
 add_action('init', 'bands_init');
+add_action('admin_init', 'bands_admin_init');
+add_action('save_post_bands', 'bands_save_admin', 10, 3);
 
 //Shortcodes
